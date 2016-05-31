@@ -2,7 +2,7 @@
 The Sword of destiny decides who lives ! 
 
 ### 1. How the game works :
-A group of N people are standing in a circle . Being bored they decide to make the best of their time by playing a game . A random person is given a sword and he / she kills the person next to him / her (to the left ) and passes the sword in the same direction . 
+A group of N people are standing in a circle . Being bored they decide to make the best of their time by playing a game . A random person is given a sword and he / she kills the person next to him / her (to the left ) and passes the sword in the same direction . ( the default implementation gives the sword to the first person , but the code is tested for any of the N people to recieve the sword at initial time .) 
 
 The last person alive wins ! 
 
