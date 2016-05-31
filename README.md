@@ -7,7 +7,7 @@ A group of N people are standing in a circle . Being bored they decide to make t
 The last person alive wins ! 
 
 This implementation has a unit testing mode , verbose mode , and a test mode which checks for logical accuracy and acts like the umpire . 
-The logical test mode has a set of 9 rules which form the game . 
+The logical test mode has a set of 8 rules which form the game . 
 Following tests are performed at each kill :
 
             1.Dead men don't kill
