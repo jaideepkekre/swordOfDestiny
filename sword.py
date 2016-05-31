@@ -1,6 +1,6 @@
-from people import people
-from helper import bcolors
 import LogicalTests
+from helper import bcolors
+from people import people
 
 test_mode = 0
 verbose = 0
@@ -112,7 +112,7 @@ def start_game(first_person,N):
             1.Dead men don't kill
             2.Men can't be both  alive and dead
             3.Men who are not in circle are not killed or can't kill .
-            4.A dead man can't be killed twice
+            4.A dead  man can't be killed twice
             5.A dead can't become alive .
             6.A person can only kill the person next to him (Left Kill Rule).
             7.New person with sword can't be dead
