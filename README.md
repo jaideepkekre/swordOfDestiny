@@ -23,10 +23,10 @@ Following tests are performed at each kill :
 
 ## 2 .Usage : 
 ### Case 1 : 
-* $python swordOfDestiny -t -v 23 
-* $python swordOfDestiny -v 23 
-* $python swordOfDestiny -t  23 
-* $python swordOfDestiny  23 
+* $python destinySword -t -v 23 
+* $python destinySword -v 23 
+* $python destinySword -t  23 
+* $python destinySword  23 
 
  Legend :
 * -t : test mode, tests program  logic
@@ -34,7 +34,7 @@ Following tests are performed at each kill :
 * 23 : number of people in the circle 
 
 ### Case 2: 
-$python swordOfDestiny -ut 
+$python destinySword -ut 
 
 * -ut : Unit test mode ,self tests input 
 
