@@ -39,7 +39,7 @@ $python destinySword -ut
 * -ut : Unit test mode ,self tests input 
 
 ## 3. How to get the bits in your system : 
-* https://github.com/jaideepkekre/swordOfDestiny/archive/v1.1.zip
+* https://github.com/jaideepkekre/swordOfDestiny/archive/master.zip
 
 ## 4. System Requirements 
 * python 2.7 
