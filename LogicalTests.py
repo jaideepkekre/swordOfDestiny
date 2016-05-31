@@ -92,6 +92,10 @@ def new_person_dead(person):
         print bcolors.FAIL + "DEAD PEOPLE DON'T CARRY SWORDS"
         print bcolors.WARNING + str(person) + " is dead and attempted to take the sword!"
         test = False
+def suicide_is_illegal(killer,killed):
+    if killer == killed :
+        print bcolors.FAIL + "SANE PEOPLE DON'T KILL THEMSELVES"
+        print bcolors.WARNING + str(killer) + " is trying to kill himself!"
 
 
 def reset_data():

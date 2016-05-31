@@ -116,6 +116,7 @@ def start_game(first_person,N):
             5.A dead can't become alive .
             6.A person can only kill the person next to him (Left Kill Rule).
             7.New person with sword can't be dead
+            8.A sane person won't kill himself .
 
 
             Data structures used :
@@ -141,6 +142,7 @@ def start_game(first_person,N):
                     LogicalTests.update_dead(killed)
 
                 LogicalTests.new_person_dead(new_person_with_sword)
+                LogicalTests.suicide_is_illegal(killer,killed)
 
 
     if test_mode == 1:
