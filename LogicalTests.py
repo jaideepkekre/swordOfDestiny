@@ -12,9 +12,9 @@ def init_tests(N):
     global people_alive
     people_alive = range(1, N + 1, 1)
     original_circle = people_alive
-    print "*********************************************"
+    print "**********************************************"
     print "LOGICAL TESTS SECTION"
-    print "*********************************************"
+    print "**********************************************"
 
 
 def dead_men_dont_kill(killer):
