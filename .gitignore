@@ -1,0 +1,7 @@
+*.pyc
+*.xml
+*.iml
+*.name
+*.py~
+.idea/
+dump.rdb
