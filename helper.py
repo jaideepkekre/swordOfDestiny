@@ -1,4 +1,6 @@
 import sword
+
+
 class bcolors:
     """Pretty colours for the terminal"""
 
@@ -11,10 +13,11 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+
 def run_unit_test():
     print "\nRunning in Unit Test Mode "
 
-    print bcolors.OKBLUE+"\nTesting input via equivalence partitioning \n"
+    print bcolors.OKBLUE + "\nTesting input via equivalence partitioning \n"
 
     print bcolors.OKBLUE + "\nTesting character input"
     sword.create_circle("ABc")
@@ -36,19 +39,19 @@ def run_unit_test():
 
     print bcolors.OKBLUE + "\nTesting  initial sword positions with input as 100 "
 
-    print bcolors.OKBLUE+"\nSword at : -1 "
-    sword.initial_sword_given_to=-1
+    print bcolors.OKBLUE + "\nSword at : -1 "
+    sword.initial_sword_given_to = -1
     sword.create_circle(100)
 
-    print bcolors.OKBLUE+"\nSword at : 101 "
+    print bcolors.OKBLUE + "\nSword at : 101 "
     sword.initial_sword_given_to = 101
     sword.create_circle(100)
 
-    print bcolors.OKBLUE+"\nSword at : 100 "
+    print bcolors.OKBLUE + "\nSword at : 100 "
     sword.initial_sword_given_to = 100
     sword.create_circle(100)
 
-    print bcolors.OKBLUE+"\nSword at : 1 "
+    print bcolors.OKBLUE + "\nSword at : 1 "
     sword.initial_sword_given_to = 1
     sword.create_circle(100)
     exit()
