@@ -29,7 +29,7 @@ Following tests are performed at each kill :
 * $python swordOfDestiny  23 
 
  Legend :
-* -t : test mode, tests programme logic
+* -t : test mode, tests program  logic
 * -v : verbose mode 
 * 23 : number of people in the circle 
 
