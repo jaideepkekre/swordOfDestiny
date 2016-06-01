@@ -147,7 +147,8 @@ def start_game(first_person,N):
 
     if test_mode == 1:
         if LogicalTests.test == True :
-            print "\nAll logical tests passed"
+            print "\nAll logical tests passed in " + str(LogicalTests.rounds) + " rounds"
+
         LogicalTests.reset_data()
 
     return None

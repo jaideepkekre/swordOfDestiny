@@ -5,6 +5,8 @@ original_circle = list()
 people_dead = list()
 verbose = 0
 test = True
+rounds = 0
+last_killer = -1
 
 
 def init_tests(N):
@@ -64,6 +66,7 @@ def update_dead(killed):
     global people_alive
     global people_dead
 
+
     people_dead.append(killed)
     people_alive.remove(killed)
 
@@ -77,6 +80,8 @@ def kill_only_to_left(killer, killed):
     global people_alive
     global people_dead
     global test
+    global rounds
+    global last_killer
 
     length = len(people_alive)
     loc = people_alive.index(killer)
@@ -90,6 +95,13 @@ def kill_only_to_left(killer, killed):
         print bcolors.ENDC + "Killer:" + str(killer)
         print bcolors.HEADER + "LEGAL KILL: " + str(legal_kill)
         print "\n"
+
+    if killer > killed:
+        rounds = rounds + 1
+    elif killer < last_killer:
+        rounds = rounds + 1
+        print "*********************************"
+    last_killer = killer
 
     if killed != legal_kill:
         print bcolors.FAIL + "LEFT KILL RULE VOILATED"
@@ -119,9 +131,13 @@ def reset_data():
     global people_dead
     global verbose
     global test
+    global rounds
+    global last_killer
 
     people_alive = []
     original_circle = []
     people_dead = []
     verbose = 0
     test = True
+    rounds = 0
+    last_killer = -1
