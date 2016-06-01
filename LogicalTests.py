@@ -30,6 +30,7 @@ def dead_men_dont_kill(killer):
 def men_cant_be_alive_dead(person):
     global people_alive
     global people_alive
+    global test
 
     if person in people_alive and person in people_dead:
         print bcolors.FAIL + "PEOPLE CANT BE BOTH ALIVE AND DEAD"
@@ -39,6 +40,7 @@ def men_cant_be_alive_dead(person):
 
 def men_outside_circle(person):
     global original_circle
+    global test
 
     if person not in original_circle:
         print bcolors.FAIL + "PEOPLE NOT IN CIRCLE CANT PLAY THE GAME"
@@ -48,6 +50,7 @@ def men_outside_circle(person):
 
 def is_he_already_dead(killed):
     global people_dead
+    global test
     if killed in people_dead:
         print bcolors.FAIL + "DEAD PEOPLE CAN'T BE KILLED"
         print bcolors.WARNING + str(killed) + " is already dead !"
@@ -73,6 +76,7 @@ def kill_only_to_left(killer, killed):
     legal_kill = -1
     global people_alive
     global people_dead
+    global test
 
     length = len(people_alive)
     loc = people_alive.index(killer)
@@ -96,6 +100,7 @@ def kill_only_to_left(killer, killed):
 
 def new_person_dead(person):
     global people_dead
+    global test
     if person in people_dead:
         print bcolors.FAIL + "DEAD PEOPLE DON'T CARRY SWORDS"
         print bcolors.WARNING + str(person) + " is dead and attempted to take the sword!"
@@ -113,6 +118,7 @@ def reset_data():
     global original_circle
     global people_dead
     global verbose
+    global test
 
     people_alive = []
     original_circle = []
