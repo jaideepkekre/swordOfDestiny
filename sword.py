@@ -10,10 +10,11 @@ initial_sword_given_to =1
 
 
 
-'''
-returns False if basic tests failed
-'''
+
 def unit_test(N):
+    '''
+    returns False if basic tests failed
+    '''
     if N <= 0 :
         print bcolors.FAIL + "Error 1 : Input smaller than or equal to  0 "
         return False
@@ -26,6 +27,10 @@ def unit_test(N):
         return False
 
 def create_circle(N):
+    """
+    CLL Creation
+    """
+
     response = unit_test(N)
     if response == False:
         print bcolors.FAIL + "Exiting"
@@ -53,6 +58,9 @@ def create_circle(N):
 
 
 def give_sword_to(init_sword,first_person,N):
+    """
+    Picking starting CLL Node
+    """
 
     response = unit_test(init_sword)
     if response == False:
@@ -77,7 +85,13 @@ def give_sword_to(init_sword,first_person,N):
 
     start_game(first_person,N)
 
+
 def start_game(first_person,N):
+    """
+    ****************************************
+    CORE LOGIC , ALL THE MAGIC HAPPENS HERE
+    ****************************************
+    """
     global test_mode
     global verbose
     if test_mode:
@@ -153,6 +167,9 @@ def start_game(first_person,N):
                 LogicalTests.new_person_dead(new_person_with_sword)
                 LogicalTests.suicide_is_illegal(killer,killed)
 
+    """
+    Clean up tests and verify is all tests passed
+    """
     if test_mode:
         if LogicalTests.test_pass == True:
             print "\nAll logical tests passed in " + str(LogicalTests.rounds) + " rounds"

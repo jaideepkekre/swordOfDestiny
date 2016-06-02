@@ -10,6 +10,10 @@ last_killer = -1
 
 
 def init_tests(N):
+    """
+        Sets up test environment
+
+    """
     global original_circle
     global people_alive
     people_alive = range(1, N + 1, 1)
@@ -63,6 +67,9 @@ def is_he_already_dead(killed):
 
 
 def update_dead(killed):
+    """
+    Works with lists to maintain track of status of each person , per kill
+    """
     global people_alive
     global people_dead
 
@@ -142,6 +149,10 @@ def winner_is_not_dead(alive):
 
 
 def reset_data():
+    """
+    Clean up
+
+    """
     global people_alive
     global original_circle
     global people_dead

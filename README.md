@@ -18,6 +18,8 @@ Following tests are performed at each kill :
             6.A person can only kill the person next to him (Left Kill Rule).
             7.New person with sword can't be dead
             8.A sane person won't kill himself .
+            9.The Winner must be alive
+            10.The Winner must be the only person alive
 
 
 
