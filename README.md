@@ -1,4 +1,4 @@
-# swordOfDestiny
+# destinySword.py
 The Sword of destiny decides who lives ! 
 
 ### 1. How the game works :
