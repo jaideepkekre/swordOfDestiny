@@ -90,6 +90,12 @@ def start_game(first_person,N):
     while True :
         if current_person.next_person== current_person:
             print bcolors.OKGREEN+str(current_person.location) + " is left "
+            """
+            FOR VERIFICATION OF WIN CONDITION IN TEST MODE
+            """
+            if test_mode == 1:
+                LogicalTests.is_everyone_dead(current_person.location)
+                LogicalTests.winner_is_not_dead(current_person.location)
             break
         else:
             person_killed=current_person.next_person
@@ -117,6 +123,9 @@ def start_game(first_person,N):
             6.A person can only kill the person next to him (Left Kill Rule).
             7.New person with sword can't be dead
             8.A sane person won't kill himself .
+            9.The Winner must be alive
+            10.The Winner must be the only person alive
+            (9,10 done above , see line 97)
 
 
             Data structures used :

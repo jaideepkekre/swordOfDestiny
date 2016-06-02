@@ -125,6 +125,22 @@ def suicide_is_illegal(killer, killed):
         print bcolors.WARNING + str(killer) + " is trying to kill himself!"
 
 
+def is_everyone_dead(alive):
+    global people_alive
+    if (len(people_alive) != 1):
+        print bcolors.FAIL + "EVERYONE ISN'T DEAD YET !"
+        print bcolors.WARNING + str(people_alive) + " ARE STILL ALIVE!"
+
+
+def winner_is_not_dead(alive):
+    global people_dead
+    if alive in people_dead:
+        print bcolors.FAIL + "THE WINNER IS DEAD :(!"
+        print bcolors.WARNING + str(alive) + " IS DEAD"
+
+
+
+
 def reset_data():
     global people_alive
     global original_circle
