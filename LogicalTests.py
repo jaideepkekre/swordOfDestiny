@@ -3,8 +3,8 @@ from helper import bcolors
 people_alive = list()
 original_circle = list()
 people_dead = list()
-verbose = 0
-test = True
+verbose = False
+test_pass = True
 rounds = 0
 last_killer = -1
 
@@ -21,42 +21,42 @@ def init_tests(N):
 
 def dead_men_dont_kill(killer):
     global people_dead
-    global test
+    global test_pass
 
     if killer in people_dead:
         print bcolors.FAIL + "DEAD PEOPLE DON'T KILL"
         print bcolors.WARNING + str(killer) + " is dead and attempted to kill !"
-        test = False
+        test_pass = False
 
 
 def men_cant_be_alive_dead(person):
     global people_alive
     global people_alive
-    global test
+    global test_pass
 
     if person in people_alive and person in people_dead:
         print bcolors.FAIL + "PEOPLE CANT BE BOTH ALIVE AND DEAD"
         print bcolors.WARNING + str(person) + " is dead and alive !"
-        test = False
+        test_pass = False
 
 
 def men_outside_circle(person):
     global original_circle
-    global test
+    global test_pass
 
     if person not in original_circle:
         print bcolors.FAIL + "PEOPLE NOT IN CIRCLE CANT PLAY THE GAME"
         print bcolors.WARNING + str(person) + " is not in the circle  !"
-        test = False
+        test_pass = False
 
 
 def is_he_already_dead(killed):
     global people_dead
-    global test
+    global test_pass
     if killed in people_dead:
         print bcolors.FAIL + "DEAD PEOPLE CAN'T BE KILLED"
         print bcolors.WARNING + str(killed) + " is already dead !"
-        test = False
+        test_pass = False
         return False
     else:
         return True
@@ -79,7 +79,7 @@ def kill_only_to_left(killer, killed):
     legal_kill = -1
     global people_alive
     global people_dead
-    global test
+    global test_pass
     global rounds
     global last_killer
 
@@ -90,7 +90,7 @@ def kill_only_to_left(killer, killed):
 
     else:
         legal_kill = people_alive[loc + 1]
-    if verbose == 1:
+    if verbose:
         print bcolors.OKBLUE + str(people_alive)
         print bcolors.ENDC + "Killer:" + str(killer)
         print bcolors.HEADER + "LEGAL KILL: " + str(legal_kill)
@@ -107,16 +107,16 @@ def kill_only_to_left(killer, killed):
         print bcolors.FAIL + "LEFT KILL RULE VOILATED"
         print bcolors.WARNING + str(killer) + " TRIED TO KILL" + str(killed) + '\n'
         # print bcolors.WARNING + str(people_alive)
-        test = False
+        test_pass = False
 
 
 def new_person_dead(person):
     global people_dead
-    global test
+    global test_pass
     if person in people_dead:
         print bcolors.FAIL + "DEAD PEOPLE DON'T CARRY SWORDS"
         print bcolors.WARNING + str(person) + " is dead and attempted to take the sword!"
-        test = False
+        test_pass = False
 
 
 def suicide_is_illegal(killer, killed):
@@ -146,14 +146,14 @@ def reset_data():
     global original_circle
     global people_dead
     global verbose
-    global test
+    global test_pass
     global rounds
     global last_killer
 
     people_alive = []
     original_circle = []
     people_dead = []
-    verbose = 0
-    test = True
+    verbose = False
+    test_pass = True
     rounds = 0
     last_killer = -1

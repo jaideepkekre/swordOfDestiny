@@ -14,11 +14,11 @@ if "-ut" in arglist:
     run_unit_test()
 
 if "-t" in arglist:
-    sword.test_mode = 1
+    sword.test_mode = True
     arglist.remove("-t")
 
 if "-v" in arglist:
-    sword.verbose = 1
+    sword.verbose = True
     arglist.remove("-v")
 
 if len(arglist) > 1:

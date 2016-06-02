@@ -2,8 +2,8 @@ import LogicalTests
 from helper import bcolors
 from people import people
 
-test_mode = 0
-verbose = 0
+test_mode = False
+verbose = False
 initial_sword_given_to =1
 
 
@@ -20,7 +20,7 @@ def unit_test(N):
     if str(N).isdigit() == False:
         print bcolors.FAIL+  "Error 2 : Input has to be Numeric"
         return False
-    vartype = type(2)==type(N)
+    vartype = (type(2) == type(N))
     if not  vartype :
         print bcolors.FAIL + "Error 3 : Expected <int> not " + str(type(N))
         return False
@@ -80,10 +80,10 @@ def give_sword_to(init_sword,first_person,N):
 def start_game(first_person,N):
     global test_mode
     global verbose
-    if test_mode == 1:
+    if test_mode:
         LogicalTests.init_tests(N)
-        if verbose == 1 :
-            LogicalTests.verbose=1
+        if verbose:
+            LogicalTests.verbose = True
 
     current_person=first_person
 
@@ -93,17 +93,17 @@ def start_game(first_person,N):
             """
             FOR VERIFICATION OF WIN CONDITION IN TEST MODE
             """
-            if test_mode == 1:
+            if test_mode:
                 LogicalTests.is_everyone_dead(current_person.location)
                 LogicalTests.winner_is_not_dead(current_person.location)
             break
         else:
             person_killed=current_person.next_person
-            if verbose ==1 :
+            if verbose:
                 print bcolors.OKBLUE + str(person_killed.location) + " killed"
             new_person_with_sword= person_killed.next_person
             current_person.next_person=new_person_with_sword
-            if test_mode == 1 :
+            if test_mode:
                 killer = current_person.location
                 killed= person_killed.location
             current_person=new_person_with_sword
@@ -134,7 +134,7 @@ def start_game(first_person,N):
             (List_Type)
 
             """
-            if test_mode == 1 :
+            if test_mode:
 
 
                 LogicalTests.kill_only_to_left(killer, killed)
@@ -153,11 +153,10 @@ def start_game(first_person,N):
                 LogicalTests.new_person_dead(new_person_with_sword)
                 LogicalTests.suicide_is_illegal(killer,killed)
 
-
-    if test_mode == 1:
-        if LogicalTests.test == True :
+    if test_mode:
+        if LogicalTests.test_pass == True:
             print "\nAll logical tests passed in " + str(LogicalTests.rounds) + " rounds"
-
+            test_mode = False
         LogicalTests.reset_data()
 
     return None
