@@ -15,7 +15,7 @@ returns False if basic tests failed
 '''
 def unit_test(N):
     if N <= 0 :
-        print bcolors.FAIL+  "Error 1 : Input smaller than 0 "
+        print bcolors.FAIL + "Error 1 : Input smaller than or equal to  0 "
         return False
     if str(N).isdigit() == False:
         print bcolors.FAIL+  "Error 2 : Input has to be Numeric"
